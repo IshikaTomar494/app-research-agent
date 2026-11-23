@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App Research Agent | API & MCP Intelligence</title>
+<style>
+:root {
+  --bg:#f5f7fb; --card:#fff; --ink:#172033; --muted:#667085;
+  --line:#e5e9f1; --blue:#3659d9; --green:#13865b;
+  --yellow:#b7791f; --red:#c24141;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Arial,sans-serif}
+header{background:#111c35;color:white;padding:48px max(6%,calc((100% - 1250px)/2))}
+header .eyebrow{color:#a9baff;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:bold}
+header h1{font-size:clamp(30px,5vw,48px);line-height:1.1;margin:14px 0}
+header p{max-width:760px;color:#d1d8e8}
+main{max-width:1250px;margin:auto;padding:30px 20px}
+section{margin-bottom:32px}
+h2{font-size:23px;margin:0 0 14px}
+.sub{color:var(--muted);margin-top:-8px;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:19px}
+.metric{font-size:32px;font-weight:750;margin:5px 0}
+.muted{color:var(--muted);font-size:13px}
+.findings{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.finding{background:white;border:1px solid var(--line);border-radius:12px;padding:18px}
+.finding strong{display:block;font-size:22px;margin-bottom:5px}
+.charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.bar-row{margin:13px 0}
+.bar-label{display:flex;justify-content:space-between;gap:10px;font-size:13px}
+.track{height:9px;background:#edf0f6;border-radius:20px;margin-top:5px;overflow:hidden}
+.fill{height:100%;background:var(--blue);border-radius:20px}
+.toolbar{display:flex;flex-wrap:wrap;gap:9px;margin:15px 0}
+input,select{padding:11px;border:1px solid var(--line);border-radius:8px;background:white;color:var(--ink)}
+input{flex:1;min-width:190px}
+button,.download{border:0;background:var(--blue);color:white;padding:10px 15px;border-radius:8px;cursor:pointer;text-decoration:none;font-size:14px}
+button:hover,.download:hover{opacity:.88}
+.table-wrap{overflow:auto;background:white;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:1050px;font-size:13px}
+th,td{padding:12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#f8f9fc;cursor:pointer;position:sticky;top:0}
+th:hover{color:var(--blue)}
+td a{color:var(--blue)}
+.pill{display:inline-block;padding:3px 8px;border-radius:20px;font-size:11px;font-weight:bold;background:#edf0f6}
+.yes{background:#e3f5ed;color:#08764c}
+.partly{background:#fff3d8;color:#95600b}
+.no{background:#fde8e8;color:#ad3030}
+.unknown{background:#edf0f6;color:#596273}
+.review{background:#fff3d8;color:#95600b}
+.notes{background:white;border:1px solid var(--line);padding:20px;border-radius:12px}
+.notes li{margin:8px 0}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:9px}
+.flow span{background:#edf1ff;padding:10px 14px;border-radius:8px;font-weight:bold}
+footer{text-align:center;color:var(--muted);padding:30px}
+@media(max-width:600px){header{padding:35px 20px}main{padding:20px 12px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">Research project · 2026</div>
+  <h1>API & MCP Integration Intelligence</h1>
+  <p>A research agent evaluating 100 software applications for API access, authentication, self-serve availability, MCP support and integration buildability.</p>
+  <p id="loadStatus">Loading research dataset...</p>
+</header>
+
+<main>
+<section>
+<h2>Key findings</h2>
+<p class="sub">A snapshot of the 100-app research dataset.</p>
+<div class="grid">
+  <div class="card"><div class="muted">Apps researched</div><div class="metric" id="total">100</div><div class="muted">Across 10 categories</div></div>
+  <div class="card"><div class="muted">Free or trial access</div><div class="metric">71%</div><div class="muted">43 free · 28 trial</div></div>
+  <div class="card"><div class="muted">Buildable today</div><div class="metric">81%</div><div class="muted">17% partly buildable</div></div>
+  <div class="card"><div class="muted">Existing MCP marked yes</div><div class="metric">81</div><div class="muted">11 unknown · 8 no</div></div>
+  <div class="card"><div class="muted">Human review flags</div><div class="metric">58</div><div class="muted">Records needing review</div></div>
+</div>
+</section>
+
+<section>
+<h2>What the research shows</h2>
+<div class="findings">
+  <div class="finding"><strong>68 apps</strong>OAuth2 is the most frequently recorded authentication method.</div>
+  <div class="finding"><strong>94 apps</strong>Have REST API support, either alone or alongside GraphQL.</div>
+  <div class="finding"><strong>81 apps</strong>Are classified as buildable today by the research agent.</div>
+  <div class="finding"><strong>71 apps</strong>Are classified as free or trial-accessible.</div>
+</div>
+<p class="muted">Authentication methods can overlap because an app may support more than one method. These are research classifications, not live API tests.</p>
+</section>
+
+<section>
+<h2>Research charts</h2>
+<div class="charts">
+  <div class="card"><h3>Authentication methods</h3><div id="authChart"></div></div>
+  <div class="card"><h3>Self-serve access</h3><div id="accessChart"></div></div>
+  <div class="card"><h3>Buildability verdict</h3><div id="buildChart"></div></div>
+  <div class="card"><h3>Existing MCP status</h3><div id="mcpChart"></div></div>
+</div>
+</section>
+
+<section>
+<h2>Explore all 100 apps</h2>
+<p class="sub">Search apps and filter by category, authentication or buildability. Select a column heading to sort.</p>
+<div class="toolbar">
+  <input id="search" placeholder="Search app, blocker or category...">
+  <select id="category"><option value="">All categories</option></select>
+  <select id="auth"><option value="">All authentication methods</option></select>
+  <select id="verdict"><option value="">All verdicts</option><option>yes</option><option>partly</option><option>no</option><option>unknown</option></select>
+  <button id="reset">Reset</button>
+  <button id="downloadCsv">Download CSV</button>
+  <a class="download" href="results.json" download>Download JSON</a>
+</div>
+<p class="muted" id="resultCount"></p>
+<div class="table-wrap">
+<table>
+<thead><tr>
+<th data-key="app">App ↕</th><th data-key="category">Category ↕</th>
+<th>Authentication</th><th data-key="self_serve">Access ↕</th>
+<th data-key="api_type">API type ↕</th><th>MCP</th>
+<th data-key="buildable_verdict">Buildability ↕</th><th>Blocker</th><th>Evidence</th><th>Review</th>
+</tr></thead>
+<tbody id="appRows"></tbody>
+</table>
+</div>
+</section>
+
+<section>
+<h2>How the agent works</h2>
+<div class="card">
+  <div class="flow">
+    <span>Search</span> →
+    <span>Read documentation</span> →
+    <span>Extract claims</span> →
+    <span>Check evidence</span> →
+    <span>Human review</span>
+  </div>
+  <p>The Python research agent processes app documentation, extracts structured API and MCP information, stores evidence and records errors for follow-up. The project uses an LLM-powered research workflow and Python-based processing.</p>
+  <p><strong>Reproduce:</strong> <code>python agent.py</code> (check the repository README for the exact configuration and commands).</p>
+</div>
+</section>
+
+<section>
+<h2>Verification and accuracy</h2>
+<div class="grid">
+  <div class="card"><div class="muted">Manual sample</div><div class="metric">25 apps</div><div class="muted">125 field checks</div></div>
+  <div class="card"><div class="muted">V1 agreement</div><div class="metric">85.5%</div><div class="muted">53 / 62 determinate checks</div></div>
+  <div class="card"><div class="muted">V2 comparison agreement</div><div class="metric">93.5%</div><div class="muted">58 / 62 determinate comparisons</div></div>
+  <div class="card"><div class="muted">Unscored checks</div><div class="metric">63</div><div class="muted">Of 125 total checks</div></div>
+</div>
+<div class="notes">
+  <strong>Important methodology note</strong>
+  <p>The V2 comparison includes manual corrections aligned with the human reference. Therefore, 93.5% is comparison agreement, not an independent second-pass accuracy measurement. The 63 unclear checks were not scored. The verification was a documentation-based desk audit, not live credential-based testing.</p>
+</div>
+</section>
+
+<section>
+<h2>Where human review was needed</h2>
+<div class="notes">
+  <p><strong>58 records</strong> are flagged for human review in the dataset. The separate original and supplemental review queues preserve review history.</p>
+  <p><strong>Known evidence gap:</strong> Paygent Connect (ID 84) has no evidence attached, so its claims should remain unverified.</p>
+  <p><strong>Comparison mismatches:</strong> Shopify authentication, Gorgias authentication, Pinterest access requirements and higgsfield access classification remain mismatches against the reference.</p>
+  <p>Some evidence entries were manually mapped and not independently validated by the automated strict-check process. Public documentation and product access policies can change.</p>
+  <p><a href="step7_human_review_queue.csv" download>Original review queue</a> · <a href="step7_supplemental_review_queue.csv" download>Supplemental review queue</a> · <a href="step7_v2_comparison.csv" download>V2 comparison file</a></p>
+</div>
+</section>
+
+<section>
+<h2>Project limitations</h2>
+<div class="notes">
+<ul>
+<li>Documentation-based research does not prove that every endpoint works with live credentials.</li>
+<li>Some apps have unclear, gated or changing API access policies.</li>
+<li>MCP availability can change and should be confirmed against official project documentation.</li>
+<li>Human review remains necessary for uncertain claims and missing evidence.</li>
+<li>The dataset's 100 successful processing statuses do not mean all 100 records are fully verified.</li>
+</ul>
+</div>
+</section>
+</main>
+<footer>App Research Agent · Research snapshot · November 2026</footer>
+
+<script>
+let apps=[], sortKey="app", sortAsc=true;
+const $=id=>document.getElementById(id);
+const safe=v=>String(v??"unknown").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const val=(a,k)=>a[k]??"unknown";
+const list=v=>Array.isArray(v)?v.join(", "):String(v??"unknown");
+function countBy(key){
+ const c={}; apps.forEach(a=>{let v=a[key]; if(Array.isArray(v))v.forEach(x=>c[x]=(c[x]||0)+1);else {v=String(v??"unknown");c[v]=(c[v]||0)+1}});return c;
+}
+function chart(id,data){
+ const entries=Object.entries(data).sort((a,b)=>b[1]-a[1]);
+ const max=Math.max(1,...entries.map(x=>x[1]));
+ $(id).innerHTML=entries.map(([k,v])=>`<div class="bar-row"><div class="bar-label"><span>${safe(k)}</span><strong>${v}</strong></div><div class="track"><div class="fill" style="width:${v/max*100}%"></div></div></div>`).join("");
+}
+function evidence(a){
+ let e=Array.isArray(a.evidence)?a.evidence:[];
+ let urls=e.map(x=>typeof x==="string"?x:x.url).filter(Boolean);
+ if(Array.isArray(a.evidence_urls))urls.push(...a.evidence_urls);
+ if(a.mcp_url)urls.push(a.mcp_url);
+ urls=[...new Set(urls)].filter(u=>/^https?:\/\//i.test(u));
+ return urls.length?`<a href="${safe(urls[0])}" target="_blank" rel="noopener">View evidence</a>`:"Not available";
+}
+function populateFilters(){
+ [...new Set(apps.map(a=>String(a.category??"unknown")))].sort().forEach(v=>$("category").add(new Option(v,v)));
+ const auths=new Set();apps.forEach(a=>(Array.isArray(a.auth_methods)?a.auth_methods:[a.auth_methods]).forEach(v=>{if(v)auths.add(String(v))}));
+ [...auths].sort().forEach(v=>$("auth").add(new Option(v,v)));
+}
+function render(){
+ let q=$("search").value.toLowerCase(),cat=$("category").value,auth=$("auth").value,ver=$("verdict").value;
+ let rows=apps.filter(a=>{
+  let methods=list(a.auth_methods);
+  return (!cat||a.category===cat)&&(!auth||methods.split(", ").includes(auth))&&(!ver||String(a.buildable_verdict).toLowerCase()===ver)&&
+  (!q||[a.app,a.category,a.main_blocker,methods,a.api_type].join(" ").toLowerCase().includes(q));
+ });
+ rows.sort((a,b)=>String(a[sortKey]??"").localeCompare(String(b[sortKey]??""))*(sortAsc?1:-1));
+ $("resultCount").textContent=`Showing ${rows.length} of ${apps.length} apps`;
+ $("appRows").innerHTML=rows.map(a=>{
+  let v=String(val(a,"buildable_verdict")).toLowerCase();
+  let review=a._meta?.needs_human;
+  return `<tr><td><strong>${safe(a.app)}</strong><br><span class="muted">ID ${safe(a.id)}</span></td>
+  <td>${safe(a.category)}</td><td>${safe(list(a.auth_methods))}</td>
+  <td>${safe(a.self_serve)}</td><td>${safe(a.api_type)}</td>
+  <td>${safe(a.existing_mcp)}</td>
+  <td><span class="pill ${["yes","partly","no"].includes(v)?v:"unknown"}">${safe(v)}</span></td>
+  <td>${safe(a.main_blocker)}</td><td>${evidence(a)}</td>
+  <td>${review?'<span class="pill review">Review</span>':'<span class="pill yes">Not flagged</span>'}</td></tr>`;
+ }).join("");
+}
+function downloadCsv(){
+ const fields=["id","app","category","auth_methods","self_serve","api_type","existing_mcp","mcp_url","buildable_verdict","main_blocker","confidence","needs_human"];
+ const quote=v=>'"'+String(v??"").replace(/"/g,'""')+'"';
+ const lines=[fields.join(","),...apps.map(a=>fields.map(k=>quote(k==="needs_human"?a._meta?.needs_human:list(a[k]))).join(","))];
+ const blob=new Blob(["\ufeff"+lines.join("\r\n")],{type:"text/csv;charset=utf-8"});
+ const url=URL.createObjectURL(blob),link=document.createElement("a");
+ link.href=url;link.download="results.csv";link.click();URL.revokeObjectURL(url);
+}
+async function init(){
+ try{
+  const r=await fetch("results.json");if(!r.ok)throw Error("Could not load results.json");
+  apps=await r.json();
+  $("total").textContent=apps.length;
+  $("loadStatus").textContent=`Dataset loaded successfully · ${apps.length} app records`;
+  chart("authChart",countBy("auth_methods"));
+  chart("accessChart",countBy("self_serve"));
+  chart("buildChart",countBy("buildable_verdict"));
+  chart("mcpChart",countBy("existing_mcp"));
+  populateFilters();render();
+ }catch(e){$("loadStatus").textContent="Dataset loading failed: "+e.message+" — run the local server from the project folder."}
+}
+["search","category","auth","verdict"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",render));
+$("reset").onclick=()=>{["search","category","auth","verdict"].forEach(id=>$(id).value="");render()};
+$("downloadCsv").onclick=downloadCsv;
+document.querySelectorAll("th[data-key]").forEach(th=>th.onclick=()=>{let k=th.dataset.key;if(sortKey===k)sortAsc=!sortAsc;else{sortKey=k;sortAsc=true}render()});
+init();
+</script>
+</body>
+</html>
+
+

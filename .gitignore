@@ -1,2 +1,20 @@
 .env
 raw/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+
+# Temporary logs and research backups
+agent_log.jsonl
+raw/
+results_v2_backup.json
+results_v2_before_*.json
+results_100_fresh.json
+test_v2.json
+sample_ids.json
+step7_human_review_queue_backup.csv
+apply_final_corrections.txt

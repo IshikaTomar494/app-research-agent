@@ -1,0 +1,126 @@
+id,app,field,v1_agent,v2_agent,human_reference,human_mark_for_v1,v2_matches_reference,v2_needs_human,v2_evidence_gaps
+96,Devin,auth_methods,"API key, OAuth2","['API key', 'Personal access token']",API key / Bearer token; OAuth2 not established by cited page,Unclear,not_scored,True,not established from supplied excerpts: has_openapi_spec; not established from supplied excerpts: rate_limits_documented
+96,Devin,self_serve,unknown,unknown,Unclear,Unclear,not_scored,True,not established from supplied excerpts: has_openapi_spec; not established from supplied excerpts: rate_limits_documented
+96,Devin,api_type,REST,REST,REST,Correct,True,True,not established from supplied excerpts: has_openapi_spec; not established from supplied excerpts: rate_limits_documented
+96,Devin,existing_mcp,yes,yes,yes,Correct,True,True,not established from supplied excerpts: has_openapi_spec; not established from supplied excerpts: rate_limits_documented
+96,Devin,buildable_verdict,yes,yes,yes,Correct,True,True,not established from supplied excerpts: has_openapi_spec; not established from supplied excerpts: rate_limits_documented
+2,HubSpot,auth_methods,OAuth2,['OAuth2'],OAuth2,Correct,True,True,no verified quote for auth_methods; no verified quote for self_serve
+2,HubSpot,self_serve,yes_free,yes_free,yes_free,Correct,True,True,no verified quote for auth_methods; no verified quote for self_serve
+2,HubSpot,api_type,Unknown,REST+GraphQL,REST,Unclear,not_scored,True,no verified quote for auth_methods; no verified quote for self_serve
+2,HubSpot,existing_mcp,yes,yes,yes,Correct,True,True,no verified quote for auth_methods; no verified quote for self_serve
+2,HubSpot,buildable_verdict,yes,yes,yes,Correct,True,True,no verified quote for auth_methods; no verified quote for self_serve
+8,Close,auth_methods,"OAuth2, API key, Basic","['API key', 'Basic', 'OAuth2']",API key / Basic; OAuth2,Correct,True,True,no verified quote for api_type; MCP marked yes but no MCP URL supplied
+8,Close,self_serve,yes_free,yes_trial,yes_trial,Correct,True,True,no verified quote for api_type; MCP marked yes but no MCP URL supplied
+8,Close,api_type,REST,REST,REST,Correct,True,True,no verified quote for api_type; MCP marked yes but no MCP URL supplied
+8,Close,existing_mcp,yes,yes,Unclear,Unclear,not_scored,True,no verified quote for api_type; MCP marked yes but no MCP URL supplied
+8,Close,buildable_verdict,yes,yes,yes,Correct,True,True,no verified quote for api_type; MCP marked yes but no MCP URL supplied
+21,Slack,auth_methods,OAuth2,['OAuth2'],OAuth2,Correct,True,True,Manual source patch; fields not supported by cited official pages remain unknown.
+21,Slack,self_serve,unknown,unknown,Unclear,Unclear,not_scored,True,Manual source patch; fields not supported by cited official pages remain unknown.
+21,Slack,api_type,REST,REST,REST,Correct,True,True,Manual source patch; fields not supported by cited official pages remain unknown.
+21,Slack,existing_mcp,yes,yes,Unclear,Unclear,not_scored,True,Manual source patch; fields not supported by cited official pages remain unknown.
+21,Slack,buildable_verdict,partly,partly,yes,Unclear,not_scored,True,Manual source patch; fields not supported by cited official pages remain unknown.
+23,Zoho Cliq,auth_methods,OAuth2,['OAuth2'],OAuth2,Correct,True,True,no verified quote for auth_methods
+23,Zoho Cliq,self_serve,yes_trial,yes_trial,yes_trial,Unclear,not_scored,True,no verified quote for auth_methods
+23,Zoho Cliq,api_type,REST,REST,REST,Correct,True,True,no verified quote for auth_methods
+23,Zoho Cliq,existing_mcp,no,no,Unclear,Unclear,not_scored,True,no verified quote for auth_methods
+23,Zoho Cliq,buildable_verdict,yes,yes,yes,Correct,True,True,no verified quote for auth_methods
+59,Waterfall.io,auth_methods,API key,['API key'],API key,Unclear,not_scored,False,
+59,Waterfall.io,self_serve,unknown,partner_or_sales_gated,Unclear,Unclear,not_scored,False,
+59,Waterfall.io,api_type,REST,REST,REST,Unclear,not_scored,False,
+59,Waterfall.io,existing_mcp,unknown,no,Unclear,Unclear,not_scored,False,
+59,Waterfall.io,buildable_verdict,yes,partly,Unclear,Unclear,not_scored,False,
+61,GitHub,auth_methods,"Bearer token, JWT","['Bearer token', 'JWT']",Bearer token / JWT,Correct,True,False,
+61,GitHub,self_serve,yes_free,yes_free,yes_free,Correct,True,False,
+61,GitHub,api_type,REST,REST,REST,Correct,True,False,
+61,GitHub,existing_mcp,yes,yes,yes,Correct,True,False,
+61,GitHub,buildable_verdict,yes,yes,yes,Correct,True,False,
+68,MongoDB Atlas,auth_methods,"OAuth2, API key","['OAuth2', 'API key']",OAuth2 / API key (HTTP Digest),Correct,True,False,
+68,MongoDB Atlas,self_serve,unknown,yes_trial,Unclear,Unclear,not_scored,False,
+68,MongoDB Atlas,api_type,REST,REST,REST,Correct,True,False,
+68,MongoDB Atlas,existing_mcp,yes,yes,Unclear,Unclear,not_scored,False,
+68,MongoDB Atlas,buildable_verdict,yes,yes,yes,Correct,True,False,
+41,Shopify,auth_methods,OAuth2,"['OAuth2', 'Access token']",OAuth / access tokens,Correct,False,False,
+41,Shopify,self_serve,unknown,yes_free,Unclear,Unclear,not_scored,False,
+41,Shopify,api_type,REST+GraphQL,REST+GraphQL,REST+GraphQL,Correct,True,False,
+41,Shopify,existing_mcp,yes,yes,Unclear,Unclear,not_scored,False,
+41,Shopify,buildable_verdict,yes,yes,yes,Correct,True,False,
+46,Squarespace,auth_methods,"OAuth2, API key","['OAuth2', 'API key']",OAuth2 / API key,Unclear,not_scored,True,no verified quote for self_serve
+46,Squarespace,self_serve,paid_plan_needed,paid_plan_needed,paid_plan_needed,Unclear,not_scored,True,no verified quote for self_serve
+46,Squarespace,api_type,REST,REST,REST,Unclear,not_scored,True,no verified quote for self_serve
+46,Squarespace,existing_mcp,yes,yes,Unclear,Unclear,not_scored,True,no verified quote for self_serve
+46,Squarespace,buildable_verdict,yes,yes,Unclear,Unclear,not_scored,True,no verified quote for self_serve
+81,Stripe,auth_methods,"API key, Basic, Bearer token","['API key', 'Bearer token']",API key / Bearer token,Correct,True,False,
+81,Stripe,self_serve,yes_free,yes_free,yes_free,Unclear,not_scored,False,
+81,Stripe,api_type,REST,REST,REST,Correct,True,False,
+81,Stripe,existing_mcp,yes,yes,Unclear,Unclear,not_scored,False,
+81,Stripe,buildable_verdict,yes,yes,yes,Correct,True,False,
+83,Binance,auth_methods,Unknown,"['API key', 'HMAC signature']",API key / HMAC signature,Wrong,True,True,auth_methods evidence is not from the official domain; self_serve evidence is not from the official domain; api_type evidence is not from the official domain
+83,Binance,self_serve,unknown,yes_free,Unclear,Unclear,not_scored,True,auth_methods evidence is not from the official domain; self_serve evidence is not from the official domain; api_type evidence is not from the official domain
+83,Binance,api_type,Unknown,REST,REST,Wrong,True,True,auth_methods evidence is not from the official domain; self_serve evidence is not from the official domain; api_type evidence is not from the official domain
+83,Binance,existing_mcp,yes,yes,Unclear,Unclear,not_scored,True,auth_methods evidence is not from the official domain; self_serve evidence is not from the official domain; api_type evidence is not from the official domain
+83,Binance,buildable_verdict,partly,yes,partly,Unclear,not_scored,True,auth_methods evidence is not from the official domain; self_serve evidence is not from the official domain; api_type evidence is not from the official domain
+40,SendGrid,auth_methods,API key,"['API key', 'Bearer token', 'Basic']",API key,Unclear,not_scored,True,no verified quote for self_serve; auth_methods evidence is not from the official domain; api_type evidence is not from the official domain
+40,SendGrid,self_serve,yes_trial,yes_trial,yes_trial,Unclear,not_scored,True,no verified quote for self_serve; auth_methods evidence is not from the official domain; api_type evidence is not from the official domain
+40,SendGrid,api_type,REST,REST,REST,Unclear,not_scored,True,no verified quote for self_serve; auth_methods evidence is not from the official domain; api_type evidence is not from the official domain
+40,SendGrid,existing_mcp,no,yes,Unclear,Unclear,not_scored,True,no verified quote for self_serve; auth_methods evidence is not from the official domain; api_type evidence is not from the official domain
+40,SendGrid,buildable_verdict,yes,yes,yes,Unclear,not_scored,True,no verified quote for self_serve; auth_methods evidence is not from the official domain; api_type evidence is not from the official domain
+37,systeme.io,auth_methods,API key,['API key'],API key,Unclear,not_scored,True,api_type evidence is not from the official domain
+37,systeme.io,self_serve,yes_free,yes_free,yes_free,Unclear,not_scored,True,api_type evidence is not from the official domain
+37,systeme.io,api_type,REST,REST,REST,Unclear,not_scored,True,api_type evidence is not from the official domain
+37,systeme.io,existing_mcp,yes,yes,Unclear,Unclear,not_scored,True,api_type evidence is not from the official domain
+37,systeme.io,buildable_verdict,yes,yes,yes,Unclear,not_scored,True,api_type evidence is not from the official domain
+71,Notion,auth_methods,"OAuth2, API key","['OAuth2', 'Bearer token']",OAuth2 / Bearer token,Correct,True,False,
+71,Notion,self_serve,yes_free,yes_free,yes_free,Unclear,not_scored,False,
+71,Notion,api_type,REST,REST,REST,Unclear,not_scored,False,
+71,Notion,existing_mcp,yes,yes,yes,Unclear,not_scored,False,
+71,Notion,buildable_verdict,yes,yes,yes,Unclear,not_scored,False,
+77,ClickUp,auth_methods,"OAuth2, API key","['Personal API token', 'OAuth2']",Personal API token / OAuth2,Correct,True,True,no verified quote for self_serve; no verified quote for existing_mcp
+77,ClickUp,self_serve,yes_free,yes_free,yes_free,Unclear,not_scored,True,no verified quote for self_serve; no verified quote for existing_mcp
+77,ClickUp,api_type,REST,REST,REST,Correct,True,True,no verified quote for self_serve; no verified quote for existing_mcp
+77,ClickUp,existing_mcp,yes,yes,yes,Correct,True,True,no verified quote for self_serve; no verified quote for existing_mcp
+77,ClickUp,buildable_verdict,yes,yes,yes,Correct,True,True,no verified quote for self_serve; no verified quote for existing_mcp
+11,Zendesk,auth_methods,"Basic, API key, JWT","['Basic', 'API token', 'OAuth2']",Basic / API token / OAuth2,Wrong,True,True,no verified quote for self_serve; no verified quote for api_type; no verified quote for existing_mcp
+11,Zendesk,self_serve,yes_trial,yes_trial,yes_trial,Unclear,not_scored,True,no verified quote for self_serve; no verified quote for api_type; no verified quote for existing_mcp
+11,Zendesk,api_type,REST,REST,REST,Unclear,not_scored,True,no verified quote for self_serve; no verified quote for api_type; no verified quote for existing_mcp
+11,Zendesk,existing_mcp,unknown,unknown,Unclear,Unclear,not_scored,True,no verified quote for self_serve; no verified quote for api_type; no verified quote for existing_mcp
+11,Zendesk,buildable_verdict,yes,yes,yes,Unclear,not_scored,True,no verified quote for self_serve; no verified quote for api_type; no verified quote for existing_mcp
+19,Gorgias,auth_methods,"Basic, OAuth2","['Basic', 'API key', 'OAuth2 (public apps)']",Basic / API key; OAuth2 for public apps,Correct,False,True,no verified quote for auth_methods; no verified quote for api_type
+19,Gorgias,self_serve,yes_free,yes_free,Unclear,Unclear,not_scored,True,no verified quote for auth_methods; no verified quote for api_type
+19,Gorgias,api_type,REST,REST,REST,Correct,True,True,no verified quote for auth_methods; no verified quote for api_type
+19,Gorgias,existing_mcp,yes,yes,Unclear,Unclear,not_scored,True,no verified quote for auth_methods; no verified quote for api_type
+19,Gorgias,buildable_verdict,yes,yes,yes,Unclear,not_scored,True,no verified quote for auth_methods; no verified quote for api_type
+10,DealCloud,auth_methods,"API key, Bearer token","['API key', 'Bearer token']",API key / Bearer token,Correct,True,False,
+10,DealCloud,self_serve,admin_approval,admin_approval,admin_approval,Correct,True,False,
+10,DealCloud,api_type,REST,REST,REST,Correct,True,False,
+10,DealCloud,existing_mcp,yes,yes,Unclear,Unclear,not_scored,False,
+10,DealCloud,buildable_verdict,partly,partly,partly,Correct,True,False,
+91,NotebookLM,auth_methods,Bearer token,['Bearer token'],Unclear,Unclear,not_scored,False,
+91,NotebookLM,self_serve,unknown,paid_plan_needed,Unclear,Unclear,not_scored,False,
+91,NotebookLM,api_type,REST,REST,None / no documented public NotebookLM API,Unclear,not_scored,False,
+91,NotebookLM,existing_mcp,yes,unknown,Unclear,Unclear,not_scored,False,
+91,NotebookLM,buildable_verdict,yes,partly,no,Unclear,not_scored,False,
+22,Twilio,auth_methods,"API key, Basic, OAuth2","['Basic', 'API key']",Basic (Account SID + Auth Token) / API key,Wrong,True,False,
+22,Twilio,self_serve,yes_trial,yes_trial,yes_trial,Unclear,not_scored,False,
+22,Twilio,api_type,REST,REST,REST,Correct,True,False,
+22,Twilio,existing_mcp,yes,yes,yes,Unclear,not_scored,False,
+22,Twilio,buildable_verdict,yes,yes,yes,Correct,True,False,
+38,Pinterest,auth_methods,Unknown,['OAuth2'],OAuth2,Wrong,True,True,auth_methods evidence is not from the official domain
+38,Pinterest,self_serve,unknown,admin_approval,App registration requires review / trial-access approval,Wrong,False,True,auth_methods evidence is not from the official domain
+38,Pinterest,api_type,Unknown,REST,REST,Wrong,True,True,auth_methods evidence is not from the official domain
+38,Pinterest,existing_mcp,yes,yes,Unclear,Unclear,not_scored,True,auth_methods evidence is not from the official domain
+38,Pinterest,buildable_verdict,partly,partly,partly,Correct,True,True,auth_methods evidence is not from the official domain
+97,higgsfield,auth_methods,API key,['API key'],API key,Correct,True,True,not established from supplied excerpts: has_openapi_spec; not established from supplied excerpts: rate_limits_documented; Pay-as-you-go with minimum balance does not fit the available self_serve categories; human classification required.
+97,higgsfield,self_serve,yes_trial,unknown,Pay-as-you-go; minimum $5 balance top-up,Wrong,False,True,not established from supplied excerpts: has_openapi_spec; not established from supplied excerpts: rate_limits_documented; Pay-as-you-go with minimum balance does not fit the available self_serve categories; human classification required.
+97,higgsfield,api_type,REST,REST,REST,Correct,True,True,not established from supplied excerpts: has_openapi_spec; not established from supplied excerpts: rate_limits_documented; Pay-as-you-go with minimum balance does not fit the available self_serve categories; human classification required.
+97,higgsfield,existing_mcp,yes,yes,Unclear,Unclear,not_scored,True,not established from supplied excerpts: has_openapi_spec; not established from supplied excerpts: rate_limits_documented; Pay-as-you-go with minimum balance does not fit the available self_serve categories; human classification required.
+97,higgsfield,buildable_verdict,yes,yes,yes,Correct,True,True,not established from supplied excerpts: has_openapi_spec; not established from supplied excerpts: rate_limits_documented; Pay-as-you-go with minimum balance does not fit the available self_serve categories; human classification required.
+12,Intercom,auth_methods,"OAuth2, Bearer token","['Access token', 'OAuth2']",Access token / OAuth2,Correct,True,True,no verified quote for auth_methods; no verified quote for self_serve
+12,Intercom,self_serve,yes_trial,yes_trial,yes_trial,Unclear,not_scored,True,no verified quote for auth_methods; no verified quote for self_serve
+12,Intercom,api_type,REST,REST,REST,Correct,True,True,no verified quote for auth_methods; no verified quote for self_serve
+12,Intercom,existing_mcp,yes,yes,Unclear,Unclear,not_scored,True,no verified quote for auth_methods; no verified quote for self_serve
+12,Intercom,buildable_verdict,yes,yes,yes,Correct,True,True,no verified quote for auth_methods; no verified quote for self_serve
+98,Mermaid CLI,auth_methods,,['None'],None,Wrong,True,True,not established from supplied excerpts: has_openapi_spec; not established from supplied excerpts: rate_limits_documented
+98,Mermaid CLI,self_serve,not_applicable,not_applicable,not_applicable,Correct,True,True,not established from supplied excerpts: has_openapi_spec; not established from supplied excerpts: rate_limits_documented
+98,Mermaid CLI,api_type,SDK/CLI only,SDK/CLI only,SDK/CLI only,Correct,True,True,not established from supplied excerpts: has_openapi_spec; not established from supplied excerpts: rate_limits_documented
+98,Mermaid CLI,existing_mcp,no,unknown,no,Unclear,not_scored,True,not established from supplied excerpts: has_openapi_spec; not established from supplied excerpts: rate_limits_documented
+98,Mermaid CLI,buildable_verdict,no,no,no,Correct,True,True,not established from supplied excerpts: has_openapi_spec; not established from supplied excerpts: rate_limits_documented
